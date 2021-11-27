@@ -1,0 +1,25 @@
+body{
+    /* background-color:blanchedalmond; */
+    background-color: lightblue;
+}
+#first,#last{
+    background-color:floralwhite;
+    font-style: italic;
+    font-weight:400;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+#FirstName,#LastName {
+    background-color:floralwhite;
+}
+#operations{
+    cursor:alias;
+    color:rebeccapurple;
+}
+.btn{
+    background-color:lightcyan;
+    
+}
+#form{
+    padding-top: 50px;
+}

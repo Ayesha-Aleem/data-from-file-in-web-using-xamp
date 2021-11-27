@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./index.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <script>
+  
+        function Check() {
+         var a=document.getElementById("FirstName").value;
+         var b=document.getElementById("LastName").value;
+         if(a!=b) {
+           //jquery $
+            alert(`okay ${a} ${b}`)
+         }
+         else  
+          {
+            alert("The first and last name cant be equal");
+             
+          }
+        }
+
+        function program() {
+          var a=document.getElementById('operations').value;
+          let x="",i=0;
+         
+
+        if(a=="cs"){
+        const xmlhttp = new XMLHttpRequest();
+        //Ajax
+        xmlhttp.onload = function() {
+        //json
+        const myArr = JSON.parse(this.responseText);
+        var box; 
+        for (i;i<myArr.length;i++) {
+            box = `<input type=checkbox id="Checkbox${i}" name="cs${i}"  value= "${myArr[i]}">`;
+            x += "\n" + box + " " + myArr[i];}
+        document.getElementById("output").innerHTML = x;
+        }
+        xmlhttp.open("GET", "cs.json", true);
+        xmlhttp.send();
+       
+        }
+        else if(a=="se") {
+          const xmlhttp = new XMLHttpRequest();
+        xmlhttp.onload = function() {
+        const myArr1 = JSON.parse(this.responseText);
+        var box2;
+        for (i;i<myArr1.length;i++) {
+           box2 = `<input type=checkbox id="Checkbox${i}" name="se${i}"  value= "${myArr1[i]}">`;
+            x += "\n" + box2 + " "  + myArr1[i];} 
+        document.getElementById("output").innerHTML = x;
+        }
+        //ajax
+        xmlhttp.open("GET", "se.json", true);
+        xmlhttp.send();
+        }
+        else if(a=="course") {
+        document.getElementById("output").innerHTML = "";
+        }
+        else {
+          return;
+        }
+      }
+       
+      function test(){
+  if(document.getElementById('Checkbox0').checked) {
+    document.getElementById("final").innerHTML = document.getElementById('Checkbox0').value;
+  }
+
+  if(document.getElementById('Checkbox1').checked) {
+    document.getElementById("final2").innerHTML = document.getElementById('Checkbox1').value;
+  }
+
+  if(document.getElementById('Checkbox2').checked) {
+    document.getElementById("final3").innerHTML = document.getElementById('Checkbox2').value;
+  }
+
+  if(document.getElementById('Checkbox3').checked) {
+    document.getElementById("final4").innerHTML = document.getElementById('Checkbox3').value;
+  }
+
+  if(document.getElementById('Checkbox4').checked) {
+    document.getElementById("final5").innerHTML = document.getElementById('Checkbox4').value;
+  }
+
+      }
+    </script>  
+</head>
+  <body>
+    
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Requirments</a>
+              <a class="dropdown-item" href="#">Degree evaluation</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+      <div class="big-img">
+        <form onsubmit="return false;" class="container" id="form" >
+          <div class="container">
+              <div class="form-group">
+                  <label for="FirstName" id="first">Your First Name</label>
+                  <input type="Name" class="form-control" id="FirstName" placeholder="FirstName"><br>  
+              </div>
+              <div class="form-group">
+                  <label for="LastName" id="last">Your last Name</label>
+                  <input type="Name" class="form-control" id="LastName" placeholder="LastName">
+              </div>
+              <div class="container">
+                <select id="operations" onchange="program()">
+                  <option selected value="course" >Courses</option>
+                  <option value="cs" >CS</option>
+                  <option value="se" >SE</option>
+                </select>
+                  <pre id="output"></pre>
+              </div>
+              <div id="outputc" ></div>
+              <div>
+                <button type="submit" id="buto" class="btn btn-secondary" onclick="Check(); return test(); submi()">submit</button>
+            </div>
+              <div class="container">
+                <p id="final" class="display:block"></p>
+                <p id="final2" class="display:block"></p>
+                <p id="final3" class="display:block"></p>
+                <p id="final4" class="display:block"></p>
+                <p id="final5" class="display:block"></p>
+              </div>
+          </div>
+        </form>      
+      </div>
+     
+     
+  </body>
+</html>
